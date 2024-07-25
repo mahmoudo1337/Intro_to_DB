@@ -1,7 +1,7 @@
 CREATE DATABASE IF NOT EXISTS alx_book_store
 
 CREATE TABLE Books (
-    book_id PRIMARY KEY,
+    book_id INT PRIMARY KEY,
     title VARCHAR(30),
     FOREIGN KEY (author_id) REFERENCES (Authors),
     price DOUBLE,
@@ -28,7 +28,7 @@ CREATE TABLE Orders (
 
 CREATE TABLE Order_Details(
     orderdetail_id INT PRIMARY KEY,
-    FOREIGN KEY (order_id) REFERENCES (Orders),
-    FOREIGN KEY (book_id) REFERENCES (Books),
+    FOREIGN KEY (order_id) REFERENCES Orders(order_id),
+    FOREIGN KEY (book_id) REFERENCES Books(book_id),
     quantity DOUBLE
 )
