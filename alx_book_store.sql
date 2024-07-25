@@ -9,12 +9,12 @@ CREATE TABLE Books (
 )
 
 CREATE TABLE Authors (
-    author_id PRIMARY KEY,
+    author_id INT PRIMARY KEY,
     author_name VARCHAR(215)
 )
 
 CREATE TABLE Customers (
-    customer_id PRIMARY KEY,
+    customer_id INT PRIMARY KEY,
     customer_name VARCHAR(215)
     email VARCHAR(215)
     address TEXT
@@ -27,7 +27,7 @@ CREATE TABLE Orders (
 )
 
 CREATE TABLE Order_Details(
-    orderdetail_id PRIMARY KEY,
+    orderdetail_id INT PRIMARY KEY,
     Foreign Key (order_id) REFERENCES (Orders),
     Foreign Key (book_id) REFERENCES (Books),
     quantity DOUBLE
