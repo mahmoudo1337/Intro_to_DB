@@ -22,13 +22,13 @@ CREATE TABLE Customers (
 
 CREATE TABLE Orders (
     order_id INT PRIMARY KEY,
-    Foreign Key (customer_id) REFERENCES Customers(customer_id),
+    FOREIGN KEY (customer_id) REFERENCES Customers(customer_id),
     order_date DATE
 )
 
 CREATE TABLE Order_Details(
     orderdetail_id INT PRIMARY KEY,
-    Foreign Key (order_id) REFERENCES (Orders),
-    Foreign Key (book_id) REFERENCES (Books),
+    FOREIGN KEY (order_id) REFERENCES (Orders),
+    FOREIGN KEY (book_id) REFERENCES (Books),
     quantity DOUBLE
 )
