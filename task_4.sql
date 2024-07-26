@@ -1,2 +1,7 @@
 USE alx_book_store;
-DESC Books;
+SELECT *
+FROM 
+    INFORMATION_SCHEMA.COLUMNS
+WHERE 
+    TABLE_NAME = 'books'
+    AND TABLE_SCHEMA = DATABASE();
