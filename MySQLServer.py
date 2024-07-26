@@ -6,15 +6,11 @@ mydb = mysql.connector.connect(host="localhost", user="root", password="root", d
 mycursor = mydb.cursor()
 try:
   mycursor.execute("""
-CREATE DATABASE IF NOT EXISTS alx_book_store (
-  id INT AUTO_INCREMENT PRIMARY KEY,
-  name VARCHAR(255) NOT NULL,
-  email VARCHAR(255) NOT NULL UNIQUE
-)
+CREATE DATABASE IF NOT EXISTS alx_book_store
 """)
 
-except Exception as e:
-  print(e)
+except mysql.connector.Error:
+  print("An error occured during the connection.")
   
   
 print("Database 'alx_book_store' created successfully!")
